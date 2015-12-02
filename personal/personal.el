@@ -40,4 +40,7 @@
 (global-set-key (kbd "C-c v") 'pbpaste)
 (global-set-key (kbd "C-c x") 'pbcut)
 
+;; set js indent to 2
+(setq js-indent-level 2)
+
 ;;; personal.el ends here
