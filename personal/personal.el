@@ -40,7 +40,14 @@
 (global-set-key (kbd "C-c v") 'pbpaste)
 (global-set-key (kbd "C-c x") 'pbcut)
 
-;; set js indent to 2
-(setq js-indent-level 2)
-
+;; Javascript mode specific stuff.
+(add-hook 'js2-mode-hook
+          (lambda ()
+            (setq js2-basic-offset 4
+                  indent-tabs-mode t)))
+(add-hook 'js-mode-hook
+          (lambda ()
+            (setq tab-width 4
+                  js-indent-level 4
+                  indent-tabs-mode t)))
 ;;; personal.el ends here
