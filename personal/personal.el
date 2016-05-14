@@ -12,6 +12,8 @@
 
 ;; This is Steven McCord's personal emacs personalization file
 
+(require 'tls)
+
 ;;; Code:
 ;; Adding line numbers on the side and a space with solid seperator
 (global-linum-mode t)
@@ -20,6 +22,10 @@
 ;; adding preview mode for markdown
 (setq markdown-command (concat  "grip --gfm " (buffer-file-name) "--export -"))
 (delete-selection-mode)
+
+;; adding feature mode for cucumber
+(require 'feature-mode)
+(add-to-list 'auto-mode-alist '(".feature" . feature-mode))
 
 ;; adding the ability to copy from the emacs selection
 (defun pbcopy ()
@@ -39,5 +45,7 @@
 (global-set-key (kbd "C-c c") 'pbcopy)
 (global-set-key (kbd "C-c v") 'pbpaste)
 (global-set-key (kbd "C-c x") 'pbcut)
+
+(global-set-key (kbd "C-c C-g") 'magit-status)
 
 ;;; personal.el ends here
