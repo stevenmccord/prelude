@@ -48,4 +48,18 @@
 
 (global-set-key (kbd "C-c C-g") 'magit-status)
 
+(editorconfig-mode 1)
+
+(add-to-list 'auto-mode-alist
+             '("\\.\\(?:cap\\|gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode))
+
+;; set repl-history-file
+(setq cider-repl-history-file "~/.repl-history")
+
+;; turn on projectile
+(projectile-global-mode)
+
+;; change switch project action for projectile
+(setq projectile-switch-project-action 'magit-status)
+
 ;;; personal.el ends here
